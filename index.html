@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Library</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form">
+        <div class="formContent">
+          <label for="title">Title</label>
+          <input
+            id="title"
+            name="title"
+            type="text"
+            placeholder="Enter book title"
+          />
+        </div>
+
+        <div class="formContent">
+          <label for="author">Book Author</label>
+          <input
+            id="author"
+            name="author"
+            type="text"
+            placeholder="Enter author"
+          />
+        </div>
+
+        <div class="formContent">
+          <label for="pages">Page numbers</label>
+          <input
+            id="pages"
+            name="pages"
+            type="number"
+            placeholder="Enter page count"
+          />
+        </div>
+
+        <div class="formContent">
+          <label for="isRead">Have you read the book?</label>
+          <select name="isRead" id="isRead">
+            <option value="Yes">Yes!</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="bottomRightBox">
+          <button id="add_book_button">Add book</button>
+        </div>
+      </form>
+      <div id="test">HERE:</div>
+      <div class="book-listing">
+        <p>asd</p>
+        <p>asd</p>
+        <p>asd</p>
+        <p>asd</p>
+        <p>asd</p>
+        <p>asd</p>
+      </div>
+    </div>
+  </body>
+
+  <script src="./scripts/script.js"></script>
+</html>

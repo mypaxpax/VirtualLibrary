@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 25px;
+}
+
+#form {
+  display: grid;
+  gap: 20px;
+}
+
+.formContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.book-listing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+  align-items: center;
+  gap: 20px;
+}
+
+.book-title-listing {
+  grid-column: 1;
+}
+
+.book-author-listing {
+  grid-column: 2;
+}
+
+.book-pages-listing {
+  grid-column: 3;
+}
+
+.book-read-listing {
+  grid-column: 4;
+}
+
+.book-delete-listing {
+  grid-column: 5;
+}
