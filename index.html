@@ -13,6 +13,7 @@
         <div class="formContent">
           <label for="title">Title</label>
           <input
+            required
             id="title"
             name="title"
             type="text"
@@ -23,6 +24,7 @@
         <div class="formContent">
           <label for="author">Book Author</label>
           <input
+            required
             id="author"
             name="author"
             type="text"
@@ -33,6 +35,7 @@
         <div class="formContent">
           <label for="pages">Page numbers</label>
           <input
+            required
             id="pages"
             name="pages"
             type="number"
@@ -51,16 +54,17 @@
         <div class="bottomRightBox">
           <button id="add_book_button">Add book</button>
         </div>
+        <hr />
       </form>
-      <div id="test">HERE:</div>
-      <div class="book-listing">
-        <p>asd</p>
-        <p>asd</p>
-        <p>asd</p>
-        <p>asd</p>
-        <p>asd</p>
-        <p>asd</p>
+      <div class="book-listing-header">
+        <p>Title</p>
+        <p>Author</p>
+        <p>Pages</p>
+        <p>Read it?</p>
+        <p></p>
       </div>
+
+      <div class="book-listing"></div>
     </div>
   </body>
 
