@@ -66,4 +66,10 @@
 .removebtn {
   font-weight: 600;
   width: 100%;
+  grid-row: span 2;
+}
+
+.change-read-status {
+  font-weight: 600;
+  grid-column: 4;
 }
