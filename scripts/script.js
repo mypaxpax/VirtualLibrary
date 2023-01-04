@@ -4,7 +4,6 @@ const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
 const isRead = document.querySelector("#isRead");
 const form = document.querySelector("#form");
-const test = document.querySelector("#test");
 const bookListing = document.querySelector(".book-listing");
 
 // The action taken when the form is submited - calls the function to add a new book
@@ -13,22 +12,22 @@ form.addEventListener("submit", addBookToLibrary);
 // The array tot store the book objects
 let myLib = [
   {
-    title: "Imaginary Friends",
-    author: "JK someone",
-    pages: 214,
-    isRead: "Yes!",
-  },
-  {
-    title: "Hobbit",
-    author: "LK",
-    pages: 122,
+    title: "Dark Matter",
+    author: "Michelle Paver",
+    pages: 246,
     isRead: "No",
   },
   {
-    title: "Scooby",
-    author: "LOlse",
-    pages: 22,
-    isRead: "Yes",
+    title: "Imaginary Friend",
+    author: "Stephen Chbosky",
+    pages: 705,
+    isRead: "Yes!",
+  },
+  {
+    title: "Stolen Tongues",
+    author: "Felix Blackwell",
+    pages: 320,
+    isRead: "Yes!",
   },
 ];
 
@@ -59,28 +58,37 @@ function addBookToLibrary() {
 
 function loopBooks() {
   bookListing.innerHTML = "";
+
   for (let i = 0; i < myLib.length; i++) {
-    displayBooks(myLib[i]);
-    console.table(myLib[title]);
+    const removeBtn = document.createElement("div");
+    const bookTitle = document.createElement("p");
+
+    bookTitle.className = "book-title-listing";
+    bookTitle.textContent = myLib[i].title;
+    removeBtn.innerHTML = `<button class="removebtn" onclick="removeBook(${i})">Delete</button>`;
+
+    const bookAuthor = document.createElement("p");
+    bookAuthor.className = "book-author-listing";
+    bookAuthor.textContent = myLib[i].author;
+    removeBtn.innerHTML = `<button class="removebtn" onclick="removeBook(${i})">Delete</button>`;
+
+    const bookPages = document.createElement("p");
+    bookPages.className = "book-pages-listing";
+    bookPages.textContent = myLib[i].pages;
+    removeBtn.innerHTML = `<button class="removebtn" onclick="removeBook(${i})">Delete</button>`;
+
+    const bookRead = document.createElement("p");
+    bookRead.className = "book-read-listing";
+    bookRead.textContent = myLib[i].isRead;
+    removeBtn.innerHTML = `<button class="removebtn" onclick="removeBook(${i})">Delete</button>`;
+
+    bookListing.append(bookTitle, bookAuthor, bookPages, bookRead, removeBtn);
   }
 }
 
-function displayBooks(book) {
-  const bookTitle = document.createElement("p");
-  bookTitle.className = "book-title-listing";
-  bookTitle.textContent = book.title;
-
-  const bookAuthor = document.createElement("p");
-  bookAuthor.className = "book-author-listing";
-  bookAuthor.textContent = book.author;
-
-  const bookPages = document.createElement("p");
-  bookPages.className = "book-pages-listing";
-  bookPages.textContent = book.pages;
-
-  const bookRead = document.createElement("p");
-  bookRead.className = "book-read-listing";
-  bookRead.textContent = book.isRead;
-
-  bookListing.append(bookTitle, bookAuthor, bookPages, bookRead);
+function removeBook(i) {
+  myLib.splice(i, 1);
+  loopBooks();
 }
+
+loopBooks();
